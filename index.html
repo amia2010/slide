@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>위로 이동하는 슬라이드</title>
+  <style>
+     *{margin: 0; padding: 0;}
+    li{list-style: none;}
+    a{text-decoration: none;color: inherit;}
+    img{vertical-align:bottom;}
+    #wrap{width: 1200px;height: 1800px;background-image :url(./images/snow2.webp);}
+
+    #slide{width:900px;height:600px;margin:0 auto;overflow: hidden;}
+
+    /* #slide ul {width:3600px;height:400px;position: relative;} */
+    #slide ul {width:900px;height:600px;position: relative;}
+    #slide ul li {float:left; width:900px;height:600px}
+    #slide ul li a {display: block;}
+
+
+
+
+  </style>
+
+</head>
+<body>
+ <div id="wrap">
+  <div id="slide">
+    <ul>
+      <li class="cl1"><a href="#"><img src="./images/gm5.jpg"></a></li>
+      <li class="cl2"><a href="#"><img src="./images/gm13.jpg"></a></li>
+      <!-- <li class="cl2"><a href="#"><img src="./images/gm12.jpg"></a></li> -->
+      <li class="cl3"><a href="#"><img src="./images/gm7.jpg"></a></li>
+      <li class="cl3"><a href="#"><img src="./images/gm8.jpg"></a></li>
+      <li class="cl3"><a href="#"><img src="./images/gm2.jpg"></a></li>
+      <!-- <li class="cl3"><a href="#"><img src="./images/gm1.jpg"></a></li> -->
+      <li class="cl3"><a href="#"><img src="./images/gm17.jpg"></a></li>
+      <li class="cl3"><a href="#"><img src="./images/gm15.jpg"></a></li> 
+      <li class="cl3"><a href="#"><img src="./images/gm19.jpg"></a></li>
+      <li class="cl3"><a href="#"><img src="./images/gm20.jpg"></a></li>
+    </ul>
+
+
+  </div>
+
+</div>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function(){  //위로이동슬라이드
+      setInterval(function(){$("#wrap").animate({
+        top:"-600px"
+      },600,function(){
+        $("#wrap").append($("#wrap").eq(0));
+        $("#wrap").css("top",0);
+      });
+    },3000);
+    });
+
+
+    $(function(){  //위로이동슬라이드
+      setInterval(function(){$("#slide ul").animate({
+        top:"-600px"
+      },600,function(){
+        $("#slide ul").append($("#slide ul li").eq(0));
+        $("#slide ul").css("top",0);
+      });
+    },3000);
+    });
+
+
+
+
+  </script>
+</body>
+</html>
